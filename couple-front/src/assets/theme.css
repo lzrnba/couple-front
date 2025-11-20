@@ -1,0 +1,166 @@
+/* 樱花粉色系主题和Material Design样式 */
+:root {
+  /* 樱花粉色彩系统 */
+  --primary-pink: #FF69B4;
+  --light-pink: #FFC0CB;
+  --dark-pink: #FF1493;
+  --accent-pink: #FF6B9D;
+  --pastel-pink: #f8cdda;
+  
+  /* Material Design 相关 */
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --background: #FFFFFF;
+  --surface: #FFFFFF;
+  --border-radius: 8px; /* 增加圆角 */
+  --elevation-1: 0 2px 4px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);
+  --elevation-2: 0 4px 8px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.08);
+  --elevation-3: 0 6px 12px rgba(0,0,0,.14), 0 3px 6px rgba(0,0,0,.1);
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+/* Material Design 卡片样式 */
+.material-card {
+  background-color: var(--surface);
+  border-radius: var(--border-radius);
+  box-shadow: var(--elevation-1);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-md) auto;
+  transition: box-shadow 0.3s ease;
+  max-width: 500px; /* 增加最大宽度 */
+  width: 100%;
+}
+
+.material-card:hover {
+  box-shadow: var(--elevation-2);
+}
+
+/* Material Design 按钮样式 */
+.pink-button {
+  background-color: var(--primary-pink);
+  color: white;
+  border: none;
+  border-radius: calc(var(--border-radius) * 2); /* 更圆的按钮 */
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  transition: all 0.3s ease;
+  box-shadow: var(--elevation-1);
+  min-width: 80px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pink-button:hover {
+  background-color: var(--dark-pink);
+  box-shadow: var(--elevation-2);
+  transform: translateY(-1px);
+}
+
+.pink-button:active {
+  transform: translateY(0);
+}
+
+.pink-button:disabled {
+  background-color: var(--light-pink);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.pink-button.secondary {
+  background-color: transparent;
+  color: var(--primary-pink);
+  border: 1px solid var(--primary-pink);
+}
+
+.pink-button.secondary:hover {
+  background-color: rgba(255, 105, 180, 0.1);
+}
+
+/* 表单输入框样式 */
+.form-input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: var(--spacing-xs) 0 var(--spacing-md) 0;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-pink);
+  box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.2);
+}
+
+/* 文本链接样式 */
+.text-link {
+  color: var(--primary-pink);
+  text-decoration: none;
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.text-link:hover {
+  background-color: rgba(255, 105, 180, 0.1);
+  text-decoration: underline;
+}
+
+/* 加载动画 */
+.loading {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 105, 180, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary-pink);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Flex布局工具类 */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .material-card {
+    margin: var(--spacing-md);
+    padding: var(--spacing-md);
+    max-width: calc(100% - 32px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .material-card {
+    max-width: 550px; /* 在大屏幕上进一步增加宽度 */
+  }
+}
